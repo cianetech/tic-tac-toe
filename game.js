@@ -21,22 +21,16 @@ const cell9 = document.getElementById("9");
 
 let math = Math.floor(Math.random() * 9) + 1;
 
-const iconPlayer1 = "X";
-const iconPlayer2 = "O";
+const iconPlayer1 = "🌻";
+const iconPlayer2 = "💣";
 let isPlayer1 = true;
-
 
 cell1.onclick = function() {
   if (cell1.innerText !== "") {
     return;
   }
-  if (isPlayer1) {
-      cell1.innerText = iconPlayer1;
-      isPlayer1 = false;
-    } else {
-      cell1.innerText = iconPlayer2;
-      isPlayer1 = true;
-  }
+  cell1.innerText = isPlayer1 ? iconPlayer1 : iconPlayer2;
+  isPlayer1 = !isPlayer1;
 }
 
 cell2.onclick = function() {
